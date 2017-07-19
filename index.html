@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="angularModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>EMPLOYEE DETAILS</title>
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "myStyle.css" />
+   
+</head>
+</head>
+
+<body ng-controller="IndexController">
+<h1>EMPLOYEE DETAILS</h1>
+
+<form action="index.html" ng-submit="postData()">
+
+<table align="center" style="width:50%" style="height:50%">
+<tr>
+<td><font size="5"> Name  </td>
+<td> <strong> : </strong> </td>
+<td></td>
+<td> <input type="text" name="efirst" placeholder="Enter First Name" ng-model="firstName" > </td>
+</tr>
+
+<tr></tr>
+
+<tr>
+<td> <font size="5">Designation  </td>
+<td> <strong> : </strong> </td>
+<td></td>
+<td> <input type="text" name="esecond" placeholder="Enter Second Name" ng-model="secondName"/> </td>
+</tr>
+
+<tr></tr>
+
+<tr>
+<td> <font size="5">Project Details  </td>
+<td> <strong> : </strong> </td>
+<td></td>
+<td> <textarea placeholder="Enter Project Details "></textarea> </td>
+</tr>
+
+<tr></tr>
+<tr></tr>
+<tr>
+<td><font size="5"> Location </td>
+<td> <strong> : </strong> </td>
+<td></td>
+<td> <input type="text" name="elocation" placeholder="Enter Location"> </td>
+</tr>
+
+<tr></tr>
+<tr></tr>
+<tr>
+<td> <font size="5">Date of Birth </td>
+<td> <strong> : </strong> </td>
+<td></td>
+<td> <input type="text" name="edob" placeholder="Enter Date of Birth"> </td>
+</tr>
+
+<tr></tr>
+<tr></tr>
+<tr>
+<td><font size="5"> Address </td>
+<td> <strong> : </strong> </td>
+<td></td>
+<td> <textarea placeholder="Enter Address"></textarea> </td>
+</tr>
+
+<tr></tr>
+<tr></tr>
+<tr>
+<td><font size="5"> Phone Number </td>
+<td> <strong> : </strong> </td>
+<td></td>
+<td> <input type="text" name="ephno" placeholder="Enter Phone Number"> </td>
+</tr>
+
+</table>
+
+
+<p align="center">	<input class="button" type="submit" value="Submit"><p>
+
+<br>
+<textarea>{{message}}</textarea>
+</form>
+
+<ol>
+<li ng-repeat="lang in languages">{{lang.name}}</li>
+</ol>
+
+
+
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/directives/channel-logo.js"></script>
+<script type="text/javascript" src="js/controllers/index-controller.js"></script>
+
+</body>
+</html>
