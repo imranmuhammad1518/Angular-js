@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+
+body {
+ background-color: #B3B6B7;
+ background: #BDC3C7 !important;
+}
+h1 {
+ color: #FDFEFE;
+ text-align: center;
+}
+
+.button {
+    background-color: #48C9B0;
+    border: ;
+    color: black;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+} 
+
+.textBoxColor
+{
+	background-color:#FCF5D8;
+}
