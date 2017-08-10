@@ -1,0 +1,69 @@
+
+<html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+
+
+<body ng-app="angularModule">
+
+<a href="#!new">click me</a>
+<ng-view></ng-view>
+
+ <form name="login">
+<table align="center">
+<tr></tr><tr></tr>
+<tr>
+<td><font size="5"> User Name  </td>
+<td> <strong> : </strong> </td>
+<td></td><td></td>
+<td> <input type="text" name="user_name" placeholder="Enter Username" ng-model="login_username" ng-required="true"> </td>
+<td></td>
+</tr>
+
+<tr>
+<td class="table"> <font size="5" > Password </td>
+<td> <strong> : </strong> </td>
+<td></td><td></td>
+<td> <input type="password" name="user_password" placeholder="Enter Password" ng-model="login_password" ng-required="true"> </td>
+<td></td>
+</tr>
+
+  <tr>
+  <td></td><td></td><td></td><td></td>
+  <td class="table">
+   <input class="button" type="submit" value="Login" >
+   
+   <input class="button" type="submit" value="Sign up" >
+  </td>
+  </tr>
+</table >
+
+<br>
+</form>
+<script>
+var app = angular.module('angularModule',["ngRoute"]);
+
+
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "temp.htm"
+		
+    })
+    .when("/sign-up", {
+        templateUrl : "sign-up.html"
+    })
+    .when("/new", {
+        templateUrl : "new.html"
+    })
+    .when("/blue", {
+        templateUrl : "blue.html"
+    });
+});
+</script>
+
+</body>
+</html>
