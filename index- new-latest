@@ -1,0 +1,152 @@
+<html ng-app="HennaByHasna">
+<head>
+
+
+<script data-require="angular.js@*" data-semver="1.5.0" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-animate.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<!-- Material Icons-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+	
+	<!-- Store values in cookies-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-cookies.min.js"></script>
+	
+	<!-- bootstrap -->
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+    <link rel="stylesheet" href="jk-carousel.min.css" />
+  
+    <script src="jk-carousel.min.js"></script>
+
+<link rel = "stylesheet" type = "text/css" href = "HennaByHasna-Styles.css" />
+<link rel = "stylesheet" type = "text/css" href = "ng-material-styles.css" />
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers/home-controller.js"></script>
+<script type="text/javascript" src="js/controllers/portfolio-controller.js"></script>
+<script type="text/javascript" src="js/controllers/service-controller.js"></script>
+<script type="text/javascript" src="js/controllers/index-controller.js"></script>
+<script type="text/javascript" src="js/controllers/contact-controller.js"></script>
+<script type="text/javascript" src="js/controllers/DialogController.js"></script>
+    
+</head>
+ <body>
+  <div class="container" ng-controller="IndexController" ng-cloak>
+  <div class="row">
+<br> 
+ 
+ <md-progress-linear class="md-warn" ng-show="processing" md-mode="indeterminate"></md-progress-linear>
+ 
+ <table width="100%" class="title">
+ <tr>
+	<td width="50%" align="left">
+	<p style="font-size:30px;">&nbsp;HENNA BY HASNA</p>
+	</td>
+	<td width="50%" align="right"> 
+		<button class="social-icons-size" ng-click="facebookPage()"><i class="zmdi zmdi-facebook"></i></button>
+		<button class="social-icons-size" ng-click="pinterestPage()"><i class="zmdi zmdi-pinterest"></i></button>
+		<button class="social-icons-size" ng-click="googlePlusPage()"><i class="zmdi zmdi-google-plus"></i></button>
+		<button class="social-icons-size" ng-click="youtubePage()"><i class="zmdi zmdi-youtube"></i></button>
+		<button class="social-icons-size" ng-click="instagramPage()"><i class="zmdi zmdi-instagram"></i></button>
+	</td>
+	</tr>
+	</table>
+ 
+ <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndexValue">
+	 <div class="col-sm-4">
+      <md-tab label="Home" ng-click="homePage()">
+        <md-content class="md-padding">
+		<div ng-include="'home.html'" ng-controller="HomeController"></div>
+        </md-content>
+      </md-tab>
+	  </div>
+	
+	 <div class="col-sm-4">
+      <md-tab label="PORTFOLIO">
+        <md-content class="md-padding">
+		<div ng-include="'portfolio.html'" ng-controller="PortfolioController"></div>
+        </md-content>
+      </md-tab>
+	  </div>
+	  
+	   <div class="col-sm-4">
+      <md-tab label="SERVICES">
+	  <md-content class="md-padding"> 
+		<div ng-include="'service.html'" ng-controller="ServiceController"></div>
+        </md-content>
+      </md-tab>
+	  </div>
+	  
+	   <div class="col-sm-4">
+	   <md-tab label="CONTACT">
+	   <md-content class="md-padding">
+		<div ng-include="'contact.html'" ng-controller="ContactController"></div>
+        </md-content>
+      </md-tab>
+	  </div>
+	  
+    </md-tabs>
+ </md-content>
+ </div></div>
+  
+  <div layout="row" layout-align="center">
+   	
+		<md-card flex="100" style="background-color:black;height:45%;">
+		<div align="center">
+		<img src="images/logo/logo.jpg" style="width:350px;height:200px;">
+		</div>
+		
+		<div align="center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+				<button class="social-icons-size" ng-click="facebookPage()"><i class="zmdi zmdi-facebook"></i></button>
+				<button class="social-icons-size" ng-click="pinterestPage()"><i class="zmdi zmdi-pinterest"></i></button>
+				<button class="social-icons-size" ng-click="googlePlusPage()"><i class="zmdi zmdi-google-plus"></i></button>
+				<button class="social-icons-size" ng-click="youtubePage()"><i class="zmdi zmdi-youtube"></i></button>
+				<button class="social-icons-size" ng-click="instagramPage()"><i class="zmdi zmdi-instagram"></i></button>
+				
+		</div><br><br>
+		
+		<table width="90%" height="50%" style="color:white;">
+		<tr height="5%">
+		<td width="25%" align="center"><b> Additional Info</b> </td>
+		<td align="center" width="40%"><b> Contact Info </b></td>
+		<td align="center"  width="25%"><b> Other Info </b></td>
+		</tr>
+		 
+		 <tr width="90%" height="5%">
+		 <td align="center">Learn more about Henna</td>
+		 <td align="center">hennabyhasna1518@gmail.com</td>
+		 <td align="center">How to book Henna By Hasna</td>
+		 </tr>
+		 
+		 <tr width="90%" height="5%">
+		 <td align="center">Other queries</td>
+		 <td align="center">9790951518</td>
+		 <td align="center">Henna occasions</td>
+		 </tr>
+		 
+		 <tr>
+		 <td></td>
+		 <td></td>
+		 <td></td>
+		 </tr>
+		 </table>
+		 
+		</md-card>
+		</div>
+		
+		<p align="center"><i class="material-icons" size="5px" style="font-size:18px;position:relative;top:3px;">copyright</i>Copyright Henna By Hasna</p>
+</div></div>
+</body>
+</html>
