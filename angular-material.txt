@@ -6,5 +6,6 @@ https://github.com/angular/material2/issues/7692
 
 main #:
 https://material.angular.io/components/input/overview
+https://stackblitz.com/angular/egxndoprkqa
 
 https://stackoverflow.com/questions/45954397/template-parse-errors-md-form-field-is-not-a-known-element
