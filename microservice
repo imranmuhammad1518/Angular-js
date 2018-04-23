@@ -1,6 +1,6 @@
 	private static void getMapDetails() 
 	{
-	    final String uri = "https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key=AIzaSyAuAap3gV552ZA2x4094qkDSu9YY4F6Euk";
+	    final String uri = "https://maps.googleapis.com/maps/api/timezone/json?location=13.067439,80.237617&timestamp=1331161200&key=AIzaSyAVhst0BiKXpQhcbpkghUj7zP03_jZbhJQ";
 
 	    RestTemplate restTemplate = new RestTemplate();
 	    String result = restTemplate.getForObject(uri, String.class);
