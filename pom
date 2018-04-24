@@ -1,97 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+package com.example.demo;
 
-	<groupId>com.example</groupId>
-	<artifactId>Demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Map;
 
-	<name>Demo</name>
-	<description>Demo project for Spring Boot</description>
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.html.parser.Entity;
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.13.BUILD-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.view.RedirectView;
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-	</properties>
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import net.minidev.json.parser.ParseException;
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
+@RestController
+@SpringBootApplication
+public class DemoApplication {
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-	</dependencies>
+	public static void main(String[] args) { 
+		SpringApplication.run(DemoApplication.class, args);
+		getMapDetails();
+	}
+	
+//	@RequestMapping(value="/training/arithmetic/sumtwo/number1/{num1}/number2/{num2}", method= RequestMethod.GET, produces="application/json")
+//	public ResponseEntity<Object> sumOfTwoNumbers(@PathVariable Integer num1, 
+//			@PathVariable Integer num2,
+//			HttpServletRequest httpRequest,
+//			HttpServletResponse httpResponse,
+//			@RequestHeader Map<String, String> headers){
+//		System.out.println(num1);
+//		if(!headers.containsKey("sid")){
+//			return new ResponseEntity<>("Invalid request", HttpStatus.BAD_REQUEST);
+//		} 
+//		return new ResponseEntity<>(num1+num2, HttpStatus.OK); 
+//	} 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+   
+	private static <T> void getMapDetails() 
+	{ 
+		
+		//Google Map - location
+	    //final String uri = "https://maps.googleapis.com/maps/api/timezone/json?location=13.067439,80.237617&timestamp=1331161200&key=AIzaSyCZgUpf3Ep9_ZH2kTFPR9kvZdMZv64RAhs";
 
-	<repositories>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+	    //Weather
+	    //final String uri = "http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=8e64c5328dd31ac860af93a2e9a798b5";
+	    
+		//
+		final String uri = "http://services.groupkt.com/state/get/IND/UP";
+			
+	    RestTemplate restTemplate = new RestTemplate();
+	    String result = restTemplate.getForObject(uri, String.class);
+	    JSONParser parser = new JSONParser(); 
+	    JSONObject json=null;
+		try {
+			json = (JSONObject) parser.parse(result);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
-
-</project>
+	    System.out.println("********************"); 
+	    System.out.println(json);
+	    System.out.println("********************");
+	}
+}
