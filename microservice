@@ -1,10 +1,60 @@
-	private static void getMapDetails() 
-	{
-	    final String uri = "https://maps.googleapis.com/maps/api/timezone/json?location=13.067439,80.237617&timestamp=1331161200&key=AIzaSyAVhst0BiKXpQhcbpkghUj7zP03_jZbhJQ";
+package com.example.demo;
 
-	    RestTemplate restTemplate = new RestTemplate();
-	    String result = restTemplate.getForObject(uri, String.class);
-	    System.out.println("********************");
-	    System.out.println(result);
-	    System.out.println("********************");
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.JSONException;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import net.minidev.json.JSONObject;
+import net.minidev.json.JSONValue;
+import net.minidev.json.parser.JSONParser;
+import net.minidev.json.parser.ParseException;
+
+@RestController
+public class ServiceCall {
+
+	public void getMapDetails() {
+
+		// final String uri =
+		// "http://localhost:8080/training/arithmetic/sumtwo/number1/5/number2/5";
+
+		Map<String, String> responseMap = new HashMap<String, String>();
+		final String uri = "http://localhost:5050/training/arithmetic/sumtwo/number1/5/number2/5";
+
+		RestTemplate restTemplate = new RestTemplate();
+		Object resObj = restTemplate.getForObject(uri, Object.class);
+
+		getJSONObjectFromObject(resObj);
+
+		System.out.println("*********************************");
+//		System.out.println("Response is :" + resObj);
+		System.out.println("*********************************");
 	}
+	
+//	public void add() {
+//		System.out.println("hihihihihihihiihii");
+//	}
+
+	public void getJSONObjectFromObject(Object obj) {
+		System.out.println("Response is :" + obj);
+//		ObjectMapper mapper = new ObjectMapper();
+//		String jsonText = null;
+//		try {
+//			jsonText = mapper.writeValueAsString(obj);
+//		} catch (JsonProcessingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//			JSONObject jsonObject = (JSONObject) JSONValue.parse(jsonText);
+		//JSONObject jsonObj = (JSONObject) parser.parse(jsonText);
+			
+
+	}
+
+}
