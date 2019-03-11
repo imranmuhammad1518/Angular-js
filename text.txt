@@ -4,16 +4,10 @@ https://embed.plnkr.co/l1oTNT/
 
 mat-table - width - https://github.com/angular/material2/issues/5808
 
-mat-table-css  - material2/table-demo.scss at master · angular/material2
+mat-table-css  - material2/table-demo.scss at master Â· angular/material2
 
 localstorage : https://www.npmjs.com/package/angular-async-local-storage
 
    console.log(this.tableDataSource.data.find(x => x.OSLogin == osLoginId));
 
 firestore - npm install firebase angularfire2 --save 
-
-footer:
-
-Copyright © 2017 Citigroup Inc 
-
-Citigroup.com is the global source of information about and access to financial services provided by the Citigroup companies
