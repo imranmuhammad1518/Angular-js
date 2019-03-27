@@ -13,7 +13,7 @@ localstorage : https://www.npmjs.com/package/angular-async-local-storage
 firestore - npm install firebase angularfire2 --save 
 
 
-
+https://scb.taleo.net/careersection/in/jobview.ftl
 
 https://medium.freecodecamp.org/the-top-benefits-of-using-angular-for-your-project-ad54090df85c
 
